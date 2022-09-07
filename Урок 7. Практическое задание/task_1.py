@@ -42,7 +42,7 @@ class Matrix:
     def __add__(self, other):
         for el in self.new_lst:
             for i in range(0, len(self.new_lst)):
-                print (f'i={i}')
+                print(f'i={i}')
                 sum_lst[i] = self.new_lst + other.new_lst
         return sum_lst
 
