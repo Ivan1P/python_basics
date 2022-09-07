@@ -28,3 +28,34 @@
 8 10 12
 14 16 18
 """
+
+l1 = []
+l2 = []
+l3 = []
+sum_lst = []
+
+
+class Matrix:
+    def __init__(self, *args):
+        self.new_lst = list(args)
+
+    def __add__(self, other):
+        for el in self.new_lst:
+            for i in range(0, len(self.new_lst)):
+                print (f'i={i}')
+                sum_lst[i] = self.new_lst + other.new_lst
+        return sum_lst
+
+
+m1 = Matrix([1, 5, 7], [3, 3, 5], [7, 2, 1])
+m2 = Matrix([3, 3, 3], [5, 5, 5], [7, 7, 7])
+
+# print(m2.l2)
+# print(m2)
+# print (m1.l1)
+
+# for el in m1.new_lst:
+#    print(el)
+#    print(m1.new_lst)
+#    print(m2.new_lst)
+print(m1 + m2)
