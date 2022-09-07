@@ -34,15 +34,23 @@ l2 = []
 l3 = []
 sum_lst = []
 
+lst_1 = []
+
+
+# print(lst_1[0])
+
 
 class Matrix:
     def __init__(self, *args):
         self.new_lst = list(args)
+        for i in range(0, len(self.new_lst)):
+            sum_lst.append [i] = 0
 
     def __add__(self, other):
         for el in self.new_lst:
             for i in range(0, len(self.new_lst)):
                 print(f'i={i}')
+                print(f'sum_lst_i={sum_lst[i]}')
                 sum_lst[i] = self.new_lst + other.new_lst
         return sum_lst
 
