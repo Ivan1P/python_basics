@@ -33,6 +33,10 @@ l1 = []
 l2 = []
 l3 = []
 sum_lst = []
+list1 = []
+list2 = []
+list3 = []
+list4 = []
 
 lst_1 = []
 
@@ -43,27 +47,67 @@ lst_1 = []
 class Matrix:
     def __init__(self, *args):
         self.new_lst = list(args)
-        for i in range(0, len(self.new_lst)):
-            sum_lst.append [i] = 0
+
+    def __str__(self):
+        #  for el in self.new_lst:
+        #      print('{el}\n')
+        pass
 
     def __add__(self, other):
-        for el in self.new_lst:
-            for i in range(0, len(self.new_lst)):
-                print(f'i={i}')
-                print(f'sum_lst_i={sum_lst[i]}')
-                sum_lst[i] = self.new_lst + other.new_lst
+        for el1 in self.new_lst:
+            l1 = []
+            for el2 in el1:
+                l1.append(0)
+            l2.append(l1)
+            l1 = []
+        sum_lst = l2
+
+        # print(f'sum_lst={sum_lst}')
+        # print(f'sum_lst_0_0={sum_lst[0][0]}')
+        for i in range(0, len(self.new_lst)):
+            for j in range(0, len(self.new_lst[i])):
+                # print(f'i={i}')
+                # print(f'sum_lst_0_0={sum_lst[0][0]}')
+                # print(f'sum_lst_i_j={sum_lst[i][j]}')
+
+                sum_lst[i][j] = self.new_lst[i][j] + other.new_lst[i][j]
+        # print(f'sum_lst...={sum_lst}')
         return sum_lst
+
+        #   i = 0
+        #   for el1 in self.new_lst:
+        #       i = 0
+        #       list1 = []
+        #       for el2 in el1:
+        #           print(f'el1={el1}')
+        #           print(f'el2={el2}')
+
+        #           list1.append(el2)
+        #           print(f'i={i}')
+        #           print(f'list1={list1}')
+        #           # i += 1
+        #       list2.append(list1)
+        #       print(f'list2={list2}')
+
+        # for el1 in other.new_lst:
+        #    i = 0
+        #    list3 = []
+        #    for el2 in el1:
+        #        print(f'el1={el1}')
+        #        print(f'el2={el2}')
+
+        #        list3.append(el2)
+        #        print(f'sum_lst_i= {sum_lst[0][0]}')
+        #        print(f'i={i}')
+        #        print(f'list1={list1}')
+        #        i += 1
+        #    list4.append(list3)
+        #    print(f'list4={list4}')
+
+        # return sum_lst
 
 
 m1 = Matrix([1, 5, 7], [3, 3, 5], [7, 2, 1])
 m2 = Matrix([3, 3, 3], [5, 5, 5], [7, 7, 7])
 
-# print(m2.l2)
-# print(m2)
-# print (m1.l1)
-
-# for el in m1.new_lst:
-#    print(el)
-#    print(m1.new_lst)
-#    print(m2.new_lst)
 print(m1 + m2)
