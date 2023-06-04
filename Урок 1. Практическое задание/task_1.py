@@ -18,3 +18,6 @@ a = "manager"
 print(type(a))
 b = input("Введите имя ")
 print(f"Ваше имя - {b}")
+c = input("Ваша профессия:")
+print(f'Ваша профессия - {c}')
+
