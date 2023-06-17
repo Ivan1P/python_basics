@@ -44,3 +44,6 @@ print(f"Среднее арифметическое - {OBJ.average_num()}")
 
 OBJ2 = Numbers("aaa", 43, 40, 5, 0)
 print(f"Среднее арифметическое - {OBJ2.average_num()}")
+
+
+
