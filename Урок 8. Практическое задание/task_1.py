@@ -16,45 +16,71 @@
 
 ###
 
-class Data:
-    def __init__(self, day, month, year):
-        self.day = day
-        self.month = month
-        self.year = year
+class Date:
+    # day_month_year = "dd.mm.yyyy"
+
+
+
+    def __init__(self, day_month_year):
+         self.day_month_year = day_month_year
+
+
+
+    @staticmethod
+    def validation(day_month_year):
         year_min = 1
         year_max = 9999
         month_min = 1
         month_max = 12
         day_min = 1
         day_max = 31
+        d1 = day_month_year.split(".")
+        day = int(d1[0])
+        month = int(d1[1])
+        year = int(d1[2])
+        if (year_min <= year <=  year_max) and  (day_min <= day <= day_max) and  (month_min <= month <=  month_max) :
+            return  day_month_year
+        else:
+            print (f"Некорректная дата")
 
-    def day_month_year(self):
-        return f"Дата : {self.day}.{self.month}.{self.year}"
 
-    @staticmethod
-    def validation_year(cls, year):
-        return cls.year_min <= year <= year_max
 
-    @staticmethod
-    def validation_month(cls, month):
-        return cls.month_min <= month <= month_max
 
-    @staticmethod
-    def validation_day(cls, day):
-        return cls.day_min <= day <= day_max
-
-    def to_int_day(cls, day):
-        return cls.int(day)
 
     @classmethod
-    def to_int_month(cls, month):
-        return (cls, int(month))
+    def to_int(cls, day_month_year):
+         d1 = day_month_year.split(".")
+         print    (d1)
+         day = int (d1[0])
+         month = int (d1[1])
+         year = int (d1[2])
+         print(f"День = {day} месяц = {month} год = {year}" )
 
-    @classmethod
-    def to_int_year(cls, year):
-        return (cls, int(year))
+
+d2 = Date("10.01.1040")
+
+d3 = "10.02.2019"
+print(f"Date = {d3}")
+
+Date.to_int("05.08.2045")
+
+d3 = Date("20.02.2020")
+Date.to_int("05.06.2021")
 
 
-a1,a2,a3 = input("Введите дату  в формате дд.мм.гггг: ").split()
-Data.day_month_year((a1,a2,a3))
-print(f"Дата : {a1}")
+Date.to_int("06.06.2022")
+Date.validation("12.13.2022")
+Date.validation("33.10.2000")
+
+
+
+
+# d1.to_int("10.12.2020")
+# print (f"day = {d1}")
+# d1.to_int("10.02.2019")
+# print(f"date  = {a1.day_month_year}")
+# d1.validation_day()
+# d1.validation_month(da)
+# d1.validation_year()
+# print (f"Date = {d1}")
+# Date.validation_year()
